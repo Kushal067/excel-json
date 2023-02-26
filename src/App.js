@@ -9,6 +9,7 @@ class App extends Component {
       data: [],
       isDataAvailable: false,
       error: null,
+      json:""
     };
     
   }
@@ -29,7 +30,8 @@ class App extends Component {
           console.log(JSON.stringify(json))
           this.setState({
             data: json,
-            isDataAvailable : true
+            isDataAvailable : true,
+            json: JSON.stringify(json)
           })
           this.state.data.forEach(x=>{
             console.log(JSON.stringify(x))
@@ -92,6 +94,12 @@ class App extends Component {
             </tr>
             ))}
           </table>
+        }
+        {
+           <h1>JSON extract</h1>
+        }
+        {
+          <p>{this.state.json}</p>
         }
       </ul>
     );
